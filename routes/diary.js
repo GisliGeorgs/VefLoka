@@ -34,7 +34,7 @@ function diaryPost( req, res ){
 function diaryGet( req, res ){
     var user = req.session.user;
     diary.getEntries( 10, user.id, function ( err, result ){
-        var data = { title: 'Dagbók', user: user, entries: result}
+        var data = { title: 'Dagbók', user: user, entries: result };
         res.render( 'diary', data );
     } );
 } 

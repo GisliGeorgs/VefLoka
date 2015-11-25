@@ -54,15 +54,6 @@ function createHandler( req, res, next ){
     } );
 }
 
-function ensureLoggedIn( req, res, next ){
-    if( req.session.user ){
-        next();
-    }
-    else{
-        res.redirect( '/login' );
-    }
-}
-
 function redirectIfLoggedIn( req, res, next ){
     if( req.session.user ){
         res.redirect( '/diary' );

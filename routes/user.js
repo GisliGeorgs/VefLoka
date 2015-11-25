@@ -42,17 +42,17 @@ function userPost( req, res ){
         } );*/
         users.auth( username, oPass, function ( err, user ){
             if( user ){
-                users.changePass( username, nPass, function ( err, status ){
-                    if( err ){
-                        console.log( err );
+                users.changePass(username, nPass, function (err, status) {
+                    if (err) {
+                        console.log(err);
                     }
                     var success = true;
-                    if(  err || !success ){
+                    if (err || !success) {
                         success = false;
                     }
                     var data = { title: 'Notandi', success: success, user: user };
-                    res.render( 'user', data );
-                } )
+                    res.render('user', data);
+                });
             }
             else{
                 var data = { title: 'Notnadi', success: false, user: req.session.user };

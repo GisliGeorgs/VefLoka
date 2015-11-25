@@ -7,6 +7,7 @@
 ###gus97@hi.is
 
 ###Vantar
+* Henda út kommentuðum ónotuðum kóða.
 * Verjast gegn XSS í markdown-vistun
   * [Sjá hér ](https://github.com/leizongmin/js-xss)
 * 99% Villumeðhöndlun
@@ -29,9 +30,10 @@
 ###Code
 ```language-javascript
     function loginHandler( req, res, next ){
-    var username = req.body.user;
-    var password = req.body.pass;
-    console.log('Userinn er ', username);
+      var username = req.body.user;
+      var password = req.body.pass;
+      console.log('Userinn er ', username);
+    }
 ```
 ###Hérna er líka kóði
 Fjögur leading spaces

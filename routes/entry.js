@@ -12,8 +12,6 @@ router.get( '/entry', ensureLoggedIn, entry );
 router.post( '/delete', ensureLoggedIn, entryDelete );
 router.post( '/update', ensureLoggedIn, entryUpdate );
 
-
-
 module.exports = router;
 
 function entry( req, res ){
