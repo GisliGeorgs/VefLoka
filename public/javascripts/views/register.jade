@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    a( href='/login') eða skráðu þig inn
+    div.register
+        form( method='post', action='/register')   
+            if post
+                if !success
+                    p Villa við að útbúa notanda
+                else
+                    p Notandi búinn til!
+     
+            div.form-group
+                label( for='user' )
+                    | Notendanafn:
+                    input.form-control( type='text' id='user' name='user' )
+            div.form-group
+                label( for='pass' )
+                    |Lykilorð:
+                    input.form-control( type='password' id='pass' name='pass' )
+            button.btn Nýskrá

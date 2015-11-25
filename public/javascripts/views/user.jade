@@ -1,0 +1,31 @@
+extends layout
+
+block content   
+    div.user
+        form.form-horizontal( method='post', action='user' )
+            if post
+                if !success
+                    p Villa við að breyta lykilorði
+                else
+                    p Lykilorði breytt
+            div.form-group
+                label.col-sm-2.control-label( for='user' )
+                    | Notendanafn: 
+                div.col-sm-10
+                    p.form-control-static( id='user' name='user' ) #{user.username}
+            div.form-group
+                label.col-sm-2.control-label( for='oPass')
+                    | Gamla lykilorðið:
+                div.col-sm-10
+                    input( type='password' id='oPass' name='oPass' placeholder='Gamla lykilorðið' )
+            div.form-group
+                label.col-sm-2.control-label( for='pass')
+                    | Nýtt lykilorð:
+                div.col-sm-10
+                    input( type='password' id='pass' name='pass' placeholder='Nýtt lykilorð' )
+            div.form-group
+                label.col-sm-2.control-label( for='pass2')
+                    | Staðfesta:
+                div.col-sm-10
+                    input( type='password' id='pass2' name='pass2' placeholder='Aftur' )
+            button.btn Breyta lykilorði

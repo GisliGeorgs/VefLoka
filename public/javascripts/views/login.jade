@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    div.login
+        form( method='post', action='login' )
+            if error
+                p Villa við innskráningu
+            div.form-group
+                label( for='user' )
+                    | Notendanafn:
+                    input.form-control( type='text' id='user' name='user' )
+            div.form-group
+                label( for='pass' )
+                    |Lykilorð:
+                    input.form-control( type='password' id='pass' name='pass' )
+            button.btn Skrá inn
+    a( href='/register' ) Nýskráning
