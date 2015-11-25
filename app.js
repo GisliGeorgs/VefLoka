@@ -13,6 +13,9 @@ var session = require('express-session');
 //var users = require('./routes/users');
 var auth = require( './routes/auth' );
 var diary = require( './routes/diary' );
+var entry = require( './routes/entry' );  
+var index = require( './routes/index' );  
+var user = require( './routes/user' );  
 
 var errorHandler = require('./middleware/errorHandler');
 var notFoundHandler = require('./middleware/notFoundHandler');
@@ -58,6 +61,11 @@ app.use( function (req, res, next) {
 
 
 app.use( '/', auth );
+app.use( '/', diary );
+app.use( '/', entry );
+app.use( '/', index );
+app.use( '/', user );
+
 //app.use( '/', diary );
 
 app.use(notFoundHandler);

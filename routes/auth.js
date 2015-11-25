@@ -6,25 +6,28 @@ var router = express.Router();
 var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
+var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
+
 router.get( '/login', redirectIfLoggedIn, login );
 router.post( '/login', loginHandler );
 router.get( '/logout', logout );
 router.get( '/register', createForm );
 router.post( '/register', createHandler );
-
-router.get( '/index', ensureLoggedIn, index )
-router.get( '/', ensureLoggedIn, index )
-
+/*
+router.get( '/index', ensureLoggedIn, index );
+router.get( '/', ensureLoggedIn, index );
+*/
+/*
 router.get( '/diary', ensureLoggedIn, diaryGet );
-router.post( '/diary', ensureLoggedIn, diaryPost );
-
+router.post( '/diary', ensureLoggedIn, diaryPost );*/
+/*
 router.get( '/entry', ensureLoggedIn, entry );
 router.post( '/delete', ensureLoggedIn, entryDelete );
-router.post( '/update', ensureLoggedIn, entryUpdate );
-
+router.post( '/update', ensureLoggedIn, entryUpdate );*/
+/*
 router.get( '/user', ensureLoggedIn, userGet );
 router.post( '/user', ensureLoggedIn, userPost );
-
+*/
 
 module.exports = router;
 
@@ -101,6 +104,7 @@ function logout( req, res, next ){
     } );
 }
 
+/* Sjá /router/index.js
 function index( req, res ){    
     if( req.session.user ){
         var data = { title: 'Forsíða', user: req.session.user };
@@ -110,7 +114,8 @@ function index( req, res ){
         res.redirect( '/login' );
     }
 }
-
+*/
+/* Sjá /router/diary.js
 function diaryPost( req, res ){
     var userID = req.session.user.id;
     var title = req.body.title;
@@ -128,43 +133,16 @@ function diaryPost( req, res ){
         }
     } );
 }
+*/
+/* Sjá /router/diary.js
 function diaryGet( req, res ){
-    /*diary.getEntries( 10, function( err, result ){
-        var error = err;
-        var items = result.rows;
-        var data = { items: items,
-                     error: error,
-                     form: diaryPost
-                   };
-        res.render( 'diary', data );
-    } );*/
     var user = req.session.user;
     diary.getEntries( 10, user.id, function ( err, result ){
         var data = { title: 'Dagbók', user: user, entries: result}
         res.render( 'diary', data );
     } );
-} 
-/*
-function diaryIndex2( req, res ){
-    var user = req.session.user;
-    var id = req.query.id;
-    diary.getEntries( 10, user.id, function ( err, result ){
-        console.log( 'Entries er ' + result );
-        var resultID =[];
-        for( var i = 0; i < result.length; i++ ){
-            resultID.push( result[i].id );
-        }
-        console.log( resultID );
-        var data = { 
-                     title: 'Diary', 
-                     id: id,
-                     user: user, 
-                     entries: result
-                   } ;
-        res.render( 'diary, ' )
-    } )
-}
-*/
+} */
+/* Sjá /routes/entry.js
 function entry( req, res ){
     var user = req.session.user;
     var id = req.query.id;
@@ -177,7 +155,8 @@ function entry( req, res ){
             res.redirect( '/diary' );
         }
     } );
-}
+}*/
+/* Sjá /routes/entry.js
 function entryDelete( req, res ){
     var user = req.session.user;
     var id = req.query.id;
@@ -192,8 +171,8 @@ function entryDelete( req, res ){
             res.redirect( '/entry?id=' + id, data );
         }
     } );
-}
-
+}*/
+/* Sjá /routes/entry.js
 function entryUpdate( req, res ){
     var user = req.session.user;
     var id = req.query.id;
@@ -209,14 +188,15 @@ function entryUpdate( req, res ){
             res.render( '/entry?id=' + id, data );
         }
     } );
-}
-
+}*/
+/* Sjá /routes/user.js
 function userGet( req, res ){
     var user = req.session.user;
     var data = { title: 'User', user: user };
     res.render( 'user', data );
 }
-
+*/
+/* Sjá /routes/user.js
 function userPost( req, res ){    
     var username = req.session.user.username;
     var oPass = req.body.oPass;
@@ -226,7 +206,9 @@ function userPost( req, res ){
         var data = { title: 'Notnadi', success: false };  
         res.render( 'user', data );
     }  
-    else{/*
+    else{
+*/
+    /*
         users.changePass( user, oPass, nPass, function ( err, status ){
             if( err ){
                 console.log( err );
@@ -238,6 +220,7 @@ function userPost( req, res ){
             var data = { title: 'User', success: success, user: user };
             res.render( 'user', data );
         } );*/
+/*
         users.auth( username, oPass, function ( err, user ){
             if( user ){
                 users.changePass( username, nPass, function ( err, status ){
@@ -258,4 +241,4 @@ function userPost( req, res ){
             }
         } );
     }
-}
+}*/

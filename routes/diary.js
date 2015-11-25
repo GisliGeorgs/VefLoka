@@ -3,27 +3,38 @@
 var express = require( 'express' );
 var router = express.Router();
 
-var diary = require( '../lib/diary' );
+var users = require( '../lib/users' );
+var diary = require( '../lib/entries' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
-router.get( '/', ensureLoggedIn, diaryIndex );
-router.post( '/post', ensureLoggedIn, diaryPost );
+router.get( '/diary', ensureLoggedIn, diaryGet );
+router.post( '/diary', ensureLoggedIn, diaryPost );
 
-function diaryIndex( req, res ){
-    diary.getEntries( 10, function( err, result ){
-        var error = err;
-        var items = result.rows;
-        var data = { items: items,
-                     error: error,
-                     form: diaryPost
-                   };
+module.exports = router;
+
+function diaryPost( req, res ){
+    var userID = req.session.user.id;
+    var title = req.body.title;
+    var text = req.body.text;
+    var user = req.session.user;
+    //var data = [ userID, title, text, user ];
+    //console.log( data );
+    diary.addEntry( userID, title, text, function ( err, result ){
+        if( result ){
+            res.redirect( '/diary' );
+        }
+        else{
+            var data = { title: 'Dagbók', user: user, error: true };
+            res.render( 'diary', data );
+        }
+    } );
+}
+
+function diaryGet( req, res ){
+    var user = req.session.user;
+    diary.getEntries( 10, user.id, function ( err, result ){
+        var data = { title: 'Dagbók', user: user, entries: result}
         res.render( 'diary', data );
     } );
 } 
-
-function diaryPost( req, res ){
-    var i = 0;
-}
-
-module.exports = router;

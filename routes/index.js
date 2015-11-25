@@ -1,30 +1,24 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+var users = require( '../lib/users' );
+var diary = require( '../lib/entries' );
 
-router.get('/error', function(req, res){
-  // Caught and passed down to the errorHandler middleware
-  throw new Error('borked!');
-});
-/*
-var diary = require('../lib/diary');
+var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
-router.get( '/', checkAuth, diaryIndex );
-
-
-function diaryIndex( req, res ){
-    //data = get data...
-    diary.getEntries
-    data = {}
-    res.render( 'diary', data )
-}
-
-router.post( 'login', function( req, res ){
-    var post = req.body;
-} )
-*/
+router.get( '/index', ensureLoggedIn, index );
+router.get( '/', ensureLoggedIn, index );
 
 module.exports = router;
+
+function index( req, res ){    
+    if( req.session.user ){
+        var data = { title: 'Forsíða', user: req.session.user };
+        res.render( 'index', data );
+    }
+    else{
+        res.redirect( '/login' );
+    }
+}
