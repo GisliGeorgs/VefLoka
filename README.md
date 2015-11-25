@@ -6,11 +6,17 @@
 ##Guðmundur Sigurðsson, 
 ###gus97@hi.is
 
-Texti texti textiTexti texti textiTexti texti textiTexti texti textiTexti texti textiTexti
-Texti texti textiTexti texti textiTexti texti textiTexti texti texti
+###Vantar
+* Verjast gegn XSS í markdown-vistun
+  * [Sjá hér ](https://github.com/leizongmin/js-xss)
+* 99% Villumeðhöndlun
+* Form validation
+  * Register  
+  * Login
+  * Change Password/User
+* Exporta færslur í pdf?
 
-Texti texti textiTexti texti textiTexti texti textiTexti texti texti
-Texti texti textiTexti texti textiTexti texti textiTexti texti textiTexti texti texti
+
 
 ###Lists
 1. Fyrsta ætem
