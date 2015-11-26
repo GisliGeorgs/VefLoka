@@ -120,6 +120,7 @@ function loginHandler( req, res, next ){
     for( var i = 0; i < results.length; i++ ){
         if( !results[ i ].result ){
             errors.push( results[ i ] );
+            console.log( results[i] );
         } 
     }
     var data = { title: 'Innskráning', username: username };
