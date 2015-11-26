@@ -5,14 +5,14 @@ block content
     //p Welcome to #{title}
     //p Hér á að koma dagbók með userum og eh svoleiðis
     div.login
+        if post
+            if error
+                p Villa við innskráningu
+            if errors.length
+                ul
+                    each err in errors
+                        li= 'Villa í reitnum '+ err.name
         form( method='post', action='login' )
-            if post
-                if error
-                    p Villa við innskráningu
-                if errors.length
-                    ul
-                        each err in errors
-                            li= 'Villa í reitnum '+ err.name
             div.form-group
                 label( for='user' )
                     | Notendanafn:
