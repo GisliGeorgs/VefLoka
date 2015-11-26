@@ -57,19 +57,22 @@ function userPost( req, res ){
                     if (err || !success) {
                         success = false;
                     }
-                    data.success = success;
+                    data.error = success
+                    if( success ){
+                        data.changed = true;
+                    }
                     res.render('user', data);
                 });
             }
             else{
-                data.success = false;
+                data.error = false;
                 res.render( 'user', data );
             }
         } );            
     }
     else{
         data.errors = errors;
-        data.success = false;
+        data.error = false;
         res.render( 'user', data );
     }
 }

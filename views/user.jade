@@ -2,10 +2,10 @@ extends layout
 
 block content   
     div.user
-        if !success
-            p Villa við að breyta lykilorði
-        else
-            p Lykilorði breytt
+        if error
+            p Villa við að breyta lykilorði.
+        if( !error && !changed)
+            p Lykilorði breytt.
         if errors
             if errors.length
                 ul
