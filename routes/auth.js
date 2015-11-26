@@ -63,7 +63,7 @@ function createHandler( req, res, next ){
     }
     var data = { title: 'Nýskráning' };
     
-    if( errors.length ){        
+    if( !errors.length ){        
         // hér vantar villumeðhöndlun
         users.createUser( user, pass, function( err, status ){
             if( err ){
@@ -118,14 +118,14 @@ function loginHandler( req, res, next ){
     } );
     
     for( var i = 0; i < results.length; i++ ){
+        console.log( results[i] );
         if( !results[ i ].result ){
             errors.push( results[ i ] );
-            console.log( results[i] );
         } 
     }
     var data = { title: 'Innskráning', username: username };
 
-    if( errors.length ){
+    if( !errors.length ){
         users.auth(username, password, function (err, user) {
             if ( user ) {
                 req.session.regenerate(function (){
