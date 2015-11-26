@@ -8,6 +8,10 @@ block content
         form( method='post', action='login' )
             if error
                 p Villa við innskráningu
+            if errors.length
+                ul
+                    each err in errors
+                        li= 'Villa í reitnum '+ err.name
             div.form-group
                 label( for='user' )
                     | Notendanafn:

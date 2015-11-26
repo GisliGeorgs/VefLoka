@@ -3,15 +3,18 @@ extends layout
 block content
     //h1= title
     //p Welcome to #{title}
-    a( href='/login') eða skráðu þig inn
     div.register
         form( method='post', action='/register')   
-            if post
+            if post               
                 if !success
                     p Villa við að útbúa notanda
                 else
-                    p Notandi búinn til!
-     
+                    p Notandi búinn til
+                    a( href='/login' ) Skráðu þig inn hér     
+                if errors.length
+                    ul
+                        each err in errors
+                            li= 'Villa í reitnum '+ err.name
             div.form-group
                 label( for='user' )
                     | Notendanafn:
@@ -20,4 +23,5 @@ block content
                 label( for='pass' )
                     |Lykilorð:
                     input.form-control( type='password' id='pass' name='pass' )
-            button.btn Nýskrá
+            button.btn Nýskrá     
+    a( href='/login') eða skráðu þig inn
