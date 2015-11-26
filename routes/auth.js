@@ -5,6 +5,7 @@ var router = express.Router();
 
 var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
+var validate = require( '../lib/validate' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
