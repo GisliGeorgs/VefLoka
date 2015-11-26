@@ -4,7 +4,7 @@ block content
     div.user
         if error
             p Villa við að breyta lykilorði.
-        if( !error && !changed)
+        if( !error && changed)
             p Lykilorði breytt.
         if errors
             if errors.length
