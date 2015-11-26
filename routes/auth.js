@@ -73,21 +73,48 @@ function loginHandler( req, res, next ){
     var username = req.body.user;
     var password = req.body.pass;
     console.log('Userinn er ', username);
-
-    users.auth(username, password, function (err, user) {
-        if ( user ) {
-            req.session.regenerate(function (){
-                req.session.user = user;
-                res.redirect( '/index' );
-            });
+    
+    var results = [];
+    var errors = [];
+    results.push( {
+        name: 'username',
+        value: username,
+        result: validate.isLength( username, 3 ) && 
+                validate.isRequired( username )
+    } );
+    results.push( {
+        name: 'password',
+        value: password,
+        result: validate.isLength( password, 5 ) &&
+                validate.isRequired( password )
+    } );
+    
+    for( var i = 0; i < 2; i++ ){
+        if( !results[i].result ){
+            errors.push( results[i] );
         } 
-        else {
-            var data = { title: 'Innskráning', 
-                         username: username, 
-                         error: true };
-            res.render('login', data);
-        }
-    });
+    }
+    var data = { title: 'Innskráning', username: username };
+    data.errors = errors;
+
+    if( errors.length ){
+        users.auth(username, password, function (err, user) {
+            if ( user ) {
+                req.session.regenerate(function (){
+                    req.session.user = user;
+                    res.redirect( '/index' );
+                });
+            } 
+            else {
+                data.error = true;
+                res.render('login', data);
+            }
+        });        
+    }
+    else{
+        data.error = true;
+        res.render( 'login', data );        
+    }
 }
 
 function logout( req, res, next ){

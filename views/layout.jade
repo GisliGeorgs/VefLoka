@@ -9,16 +9,24 @@ html
         div#carousel.carousel.slide(data-ride='#carousel')
             ol.carousel-indicators
                 li(data-target='#carousel' data-slide-to='0' class='active')
-                li(data-target='#carousel' data-slide-to='1' class='active')
+                li(data-target='#carousel' data-slide-to='1')
             div.carousel-inner(role='list-box')
-                div.item.active: img.center-block(src='/img/Banner1.png')
-                div.item: img.center-block(src='/img/Banner2.jpg')
+                div.item.active
+                    img.center-block.first-slide(src='/img/Banner1.png')
+                    div.container
+                        div.carousel-container
+                            h1 Skoðaðu flotta leikinn minn
+                div.item
+                    img.center-block.second-slide(src='/img/Banner2.jpg')
+                    div.container
+                        div.carousel-container
+                            h1 Ég veit ekki hvað er á þessari mynd
             a.left.carousel-control(href='#carousel' role='button' data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-                span(sr-only='true')
+                span.sr-only Previous
             a.right.carousel-control(href='#carousel' role='button' data-slide='next')
                 span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-                span(sr-only='true')
+                span.sr-only Next
     nav#head
         div#headtitle
             h1= title
