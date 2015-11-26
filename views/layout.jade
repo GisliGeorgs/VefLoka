@@ -6,7 +6,7 @@ html
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
   body  
     div.container-fluid
-        div#carousel.carousel.slide(data-ride='carousel')
+        div#carousel.carousel.slide(data-ride='#carousel')
             ol.carousel-indicators
                 li(data-target='#carousel' data-slide-to='0' class='active')
                 li(data-target='#carousel' data-slide-to='1' class='active')
@@ -15,10 +15,10 @@ html
                 div.item: img.center-block(src='/img/Banner2.jpg')
             a.left.carousel-control(href='#carousel' role='button' data-slide='prev')
                 span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-                span(sr-only='true') Previous
+                span(sr-only='true')
             a.right.carousel-control(href='#carousel' role='button' data-slide='next')
                 span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-                span(sr-only='true') Next
+                span(sr-only='true')
     nav#head
         div#headtitle
             h1= title
