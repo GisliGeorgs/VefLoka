@@ -6,12 +6,13 @@ block content
     //p Hér á að koma dagbók með userum og eh svoleiðis
     div.login
         form( method='post', action='login' )
-            if error
-                p Villa við innskráningu
-            if errors.length
-                ul
-                    each err in errors
-                        li= 'Villa í reitnum '+ err.name
+            if post
+                if error
+                    p Villa við innskráningu
+                if errors.length
+                    ul
+                        each err in errors
+                            li= 'Villa í reitnum '+ err.name
             div.form-group
                 label( for='user' )
                     | Notendanafn:
