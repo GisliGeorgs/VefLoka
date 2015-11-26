@@ -2,16 +2,15 @@ extends layout
 
 block content   
     div.user
-        if post
-            if !success
-                p Villa við að breyta lykilorði
-            else
-                p Lykilorði breytt
-            if errors
-                if errors.length
-                    ul
-                        each error in errors
-                            li= 'Villa kom upp, ' + error.name
+        if !success
+            p Villa við að breyta lykilorði
+        else
+            p Lykilorði breytt
+        if errors
+            if errors.length
+                ul
+                    each error in errors
+                        li= 'Villa kom upp, ' + error.name
         form.form-horizontal( method='post', action='user' )
             div.form-group
                 label.col-sm-2.control-label( for='user' )
