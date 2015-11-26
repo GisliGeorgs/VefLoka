@@ -124,22 +124,26 @@ function loginHandler( req, res, next ){
         } 
     }
     var data = { title: 'Innskráning', username: username };
-
+    console.log( errors.length );
     if( !errors.length ){
         users.auth(username, password, function (err, user) {
+            console.log( user );
             if ( user ) {
+                console.log( 'ÉG kemst í index' );
                 req.session.regenerate(function (){
                     req.session.user = user;
                     res.redirect( '/index' );
                 });
             } 
             else {
+                console.log( 'ÉG kemst ekki í index, user fanst ekki' );
                 data.error = true;
                 res.render('login', data);
             }
         });        
     }
     else{
+        console.log( 'Villur í innstlætti' );
         data.errors = errors;
         data.error = true;
         res.render( 'login', data );        
