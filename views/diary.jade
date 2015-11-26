@@ -4,6 +4,23 @@ block content
     //h1= title
     //p Welcome to #{title}
     //p Hér á að koma dagbók með userum og eh svoleiðis
+	
+	//Carousel Begin	
+	div#carousel.carousel.slide(data-ride='carousel')
+		ol.carousel-indicators
+			li(data-target='#carousel' data-slide-to='0' class='active')
+			li(data-target='#carousel' data-slide-to='1' class='active')
+	div.carousel-inner(role='list-box')
+		div.item.active: img.center-block(src='public/img/Banner1.png')
+		div.item: img.center-block(src='public/img/Banner2.jpg')
+	a.left.carousel-control(href='#carousel' role='button' data-slide='previous')
+		span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+		span(sr-only='true') Previous
+	a.right.carousel-control(href='#carousel' role='button' data-slide='next')
+		span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+		span(sr-only='true') Next  
+	//Carousel End
+	
     div.diary.container-fluid
         div.list-group.entries3.col-sm-2
             if( !entries || entries.length == 0 )
