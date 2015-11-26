@@ -11,7 +11,7 @@
 * Verjast gegn XSS í markdown-vistun
   * [Sjá hér ](https://github.com/leizongmin/js-xss)
 * 99% Villumeðhöndlun
-* Form validation
+* Form validation - Komið held ég
   * Register  
   * Login
   * Change Password/User
