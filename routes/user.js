@@ -32,10 +32,10 @@ function userPost( req, res ){
     var isRequired = validate.isRequired( oPass ) && 
                      validate.isRequired( nPass ) &&
                      validate.isRequired( nPass2 );
-        
+    var isLength = validate.isLength( nPass, 5 );
     results.push( {
         name: 'nýju lykilorðiðin eru ekki þau sömu',
-        result: isRequired && validate.isSame( nPass, nPass2 )
+        result: isRequired && validate.isSame( nPass, nPass2 ) && isLength
     } );
 
     for( var i = 0; i < results.length; i++ ){
