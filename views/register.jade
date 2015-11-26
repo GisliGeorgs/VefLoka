@@ -4,17 +4,18 @@ block content
     //h1= title
     //p Welcome to #{title}
     div.register
+        if post               
+            if !success
+                p Villa við að útbúa notanda
+            else
+                p Notandi búinn til
+                a( href='/login' ) Skráðu þig inn hér     
+        if errors
+            if errors.length
+                ul
+                    each err in errors
+                        li= 'Villa í reitnum '+ err.name
         form( method='post', action='/register')   
-            if post               
-                if !success
-                    p Villa við að útbúa notanda
-                else
-                    p Notandi búinn til
-                    a( href='/login' ) Skráðu þig inn hér     
-                if errors.length
-                    ul
-                        each err in errors
-                            li= 'Villa í reitnum '+ err.name
             div.form-group
                 label( for='user' )
                     | Notendanafn:

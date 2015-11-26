@@ -8,6 +8,11 @@ block content
                     p Villa við að breyta lykilorði
                 else
                     p Lykilorði breytt
+            if errors
+                if errors.length
+                    ul
+                        each error in errors
+                            li= 'Villa kom upp, ' + error.name
             div.form-group
                 label.col-sm-2.control-label( for='user' )
                     | Notendanafn: 
