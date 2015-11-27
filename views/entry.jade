@@ -31,10 +31,11 @@ block content
                                 | Texti
                                 textarea.form-control.mdhtmlform-md( rows='20' id='text' name='text' ) #{entry.text}
                         div.form-group
-                            div.checkbox
-                                label( for='public' )
-                                    input( type='checkbox' id='public' name='public' value= publicC )
-                                    | Þetta er opinber færsla
+                            div.col-sm-offset-2
+                                div.checkbox
+                                    label( for='public' )
+                                        input( type='checkbox' id='public' name='public' value= publicC )
+                                        | Þetta er opinber færsla
                         button.btn.btn-lg.pull-left.btn-primary.glyphicon.glyphicon-ok Vista
                     form( method='post', action='/delete?id=' + id )
                         button.btn.pull-right.btn-warning.glyphicon.glyphicon-remove Eyða færslu
