@@ -11,4 +11,4 @@ block content
                 div.entry
                     h3 #{entry.title}
                     h4 #{entry.date}
-                    p #{entry.text}    
+                    span!= marked( #{entry.text} )   

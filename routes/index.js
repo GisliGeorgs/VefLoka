@@ -3,6 +3,8 @@
 var express = require('express');
 var router = express.Router();
 
+var marked = require( 'marked' );
+
 var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
@@ -32,11 +34,12 @@ function indexGet( req, res ){
     diary.getPublicEntries( function ( err, result ){
         if( result ){
             data.entries = result;
+            data.marked = marked;
             res.render( 'index', data );
         }
         else{
             data.error = true;
-            res.render( 'index', data    )
+            res.render( 'index', data );
         }
     } );
 }
