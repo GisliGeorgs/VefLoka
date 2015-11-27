@@ -33,8 +33,14 @@ function indexGet( req, res ){
     }    
     diary.getPublicEntries( function ( err, result ){
         if( result ){
+            //var md = [];
+            for( var i = 0; i < result.length; i++ ){
+                result.md = ( marked( result[i].text ) );
+                console.log( result[i] );
+            }
             data.entries = result;
             data.marked = marked;
+            //data.md = md;
             res.render( 'index', data );
         }
         else{
