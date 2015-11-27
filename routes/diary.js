@@ -3,6 +3,8 @@
 var express = require( 'express' );
 var router = express.Router();
 
+var xss = require( 'xss' );
+
 var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
@@ -16,7 +18,7 @@ module.exports = router;
 function diaryPost( req, res ){
     var userID = req.session.user.id;
     var title = req.body.title;
-    var text = req.body.text;
+    var text = xss(req.body.text);
     var publicEntry = req.body.public;
     var user = req.session.user;
     //var data = [ userID, title, text, user ];

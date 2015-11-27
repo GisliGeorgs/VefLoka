@@ -3,6 +3,8 @@
 var express = require('express');
 var router = express.Router();
 
+var xss = require( 'xss' ); 
+
 var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
@@ -47,7 +49,7 @@ function entryUpdate( req, res ){
     var user = req.session.user;
     var id = req.query.id;
     var title = req.body.title;
-    var text = req.body.text;
+    var text = xss(req.body.text);
     var publicEntry = req.body.public
     diary.updateEntry( user.id, id, title, text, publicEntry, function ( err, result ){
         if( result ){
