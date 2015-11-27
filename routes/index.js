@@ -23,3 +23,21 @@ function index( req, res ){
         res.render( 'index', data );
     }
 }
+
+function indexGet( req, res ){
+    var data = { title: 'Forsíða'}
+    if( req.session.user ){
+        data.user = req.session.user;
+    }
+    
+    diary.getPublicEntries( function ( err, result ){
+        if( result ){
+            data.results = result;
+            res.render( 'index', data );
+        }
+        else{
+            data.error = true;
+            res.render( 'index', data    )
+        }
+    } );
+}
