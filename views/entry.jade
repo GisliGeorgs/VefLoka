@@ -2,43 +2,44 @@ extends layout
 
 block content
     div.container-fluid
-        div.entry.col-sm-6
-            //if( entry )
-            //    h1= entry.id
-            //    h2= entry.title
-            //    h3= entry.date
-            //    p= entry.text
-            if entryDel
-                p Villa kom upp við að eyða færslunni.
-            if entryUp
-                p Villa kom upp við að uppfæra færsluna.
-            if( !entry )
-                p Enginn færsla fannst
-            else
-                - var id = entry.id
-                - var title = entry.title
-                - var date = entry.date
-                - var text = entry.text
-                - var publicC = entry.public
-                div.clearfix.form-group
-                    form( method='post', action='/update?id=' + id )
-                        div.form-group
-                            label.col-sm-12( for='title' )
-                                | Titill
+        div.row
+            div.entry.col-sm-6
+                //if( entry )
+                //    h1= entry.id
+                //    h2= entry.title
+                //    h3= entry.date
+                //    p= entry.text
+                if entryDel
+                    p Villa kom upp við að eyða færslunni.
+                if entryUp
+                    p Villa kom upp við að uppfæra færsluna.
+                if( !entry )
+                    p Enginn færsla fannst
+                else
+                    - var id = entry.id
+                    - var title = entry.title
+                    - var date = entry.date
+                    - var text = entry.text
+                    - var publicC = entry.public
+                    div.clearfix.form-group
+                        form( method='post', action='/update?id=' + id )
+                            div.form-group
+                                label.col-sm-12( for='title' )
+                                    | Titill
                                 input( class='form-control' type='text' id='title' name='title' value= entry.title )
-                        div.form-group
-                            label.col-sm-12( for='text' )
-                                | Texti
+                            div.form-group
+                                label.col-sm-12( for='text' )
+                                    | Texti
                                 textarea.form-control.mdhtmlform-md( rows='20' id='text' name='text' ) #{entry.text}
-                        div.form-group
-                            div.checkbox
-                                label( for='public' )
-                                    input( type='checkbox' id='public' name='public' value= publicC )
-                                    | Þetta er opinber færsla
-                        button.btn.btn-lg.pull-left.btn-primary.glyphicon.glyphicon-ok Vista
-                    form( method='post', action='/delete?id=' + id )
-                        button.btn.pull-right.btn-warning.glyphicon.glyphicon-remove Eyða færslu
-        div.markdown.mdhtmlform-html.col-sm-6#markdowned
+                            div.form-group
+                                div.checkbox
+                                    label( for='public' )
+                                        input( type='checkbox' id='public' name='public' value= publicC )
+                                        | Þetta er opinber færsla
+                            button.btn.btn-lg.pull-left.btn-primary.glyphicon.glyphicon-ok Vista
+                        form( method='post', action='/delete?id=' + id )
+                            button.btn.pull-right.btn-warning.glyphicon.glyphicon-remove Eyða færslu
+            div.markdown.mdhtmlform-html.col-sm-6#markdowned
     script( src='https://code.jquery.com/jquery-2.1.4.min.js' )
     //http://justinmccandless.com/demos/markdown-html-form/examples/hallo/js/vendor/showdown.js
     //script( src='/javascripts/showdown/showdown.js' )
