@@ -7,7 +7,6 @@
 ###gus97@hi.is
 
 ###Vantar
-* Henda út kommentuðum ónotuðum kóða.
 * Verjast gegn XSS í markdown-vistun - Komið?
   * [Sjá hér ](https://github.com/leizongmin/js-xss)
 * 99% Villumeðhöndlun
@@ -16,7 +15,6 @@
   * Login
   * Change Password/User
 * Exporta færslur í pdf?
-* Public í DB, routes, entries.js, index.jade,
 
 
 
