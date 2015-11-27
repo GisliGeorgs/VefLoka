@@ -31,15 +31,15 @@ html
         div#headtitle
             h1= title
         div
-            nav.nav.navbar-default
+            nav.navbar.navbar-default
                 div.container-fluid
                     div.navbar-header
-                        button.navbar-toggle.collapsed
+                        button.navbar-toggle.collapsed( data-toggle='collapse' data-target='myNav' )
                             span.icon-bar
                             span.icon-bar
                             span.icon-bar
                         a.navbar-brand(href='/') Heim
-                    div.collapse.navbar-collapse
+                    div.collapse.navbar-collapse#myNav
                         ul.nav.navbar-nav
                             li
                                 a(href='/diary') Dagbók
