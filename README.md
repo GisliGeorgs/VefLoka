@@ -16,6 +16,7 @@
   * Login
   * Change Password/User
 * Exporta færslur í pdf?
+* Public í DB, routes, entries.js, index.jade,
 
 
 

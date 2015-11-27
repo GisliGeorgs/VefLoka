@@ -8,17 +8,18 @@ var diary = require( '../lib/entries' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
-router.get( '/index', ensureLoggedIn, index );
-router.get( '/', ensureLoggedIn, index );
+router.get( '/index'/*, ensureLoggedIn*/, index );
+router.get( '/'/*, ensureLoggedIn*/, index );
 
 module.exports = router;
 
-function index( req, res ){    
+function index( req, res ){
+    var data = { title: 'Forsíða' };    
     if( req.session.user ){
-        var data = { title: 'Forsíða', user: req.session.user };
+        data.user = req.session.user;
         res.render( 'index', data );
     }
     else{
-        res.redirect( '/login' );
+        res.render( '/index', data );
     }
 }
