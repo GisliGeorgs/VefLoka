@@ -58,7 +58,7 @@ function entryUpdate( req, res ){
         }
         else{            
             var data = { title: 'Færsla', errorUp: true };
-            res.render( '/entry?id=' + id, data );
+            res.render( 'entry?id=' + id, data );
         }
     } );
 }
