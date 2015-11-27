@@ -25,11 +25,10 @@ function index( req, res ){
 }
 
 function indexGet( req, res ){
-    var data = { title: 'Forsíða'}
+    var data = { title: 'Forsíða' };
     if( req.session.user ){
         data.user = req.session.user;
-    }
-    
+    }    
     diary.getPublicEntries( function ( err, result ){
         if( result ){
             data.results = result;
