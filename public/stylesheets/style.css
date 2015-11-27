@@ -28,15 +28,14 @@ hr {
 	height: 5px;
 }
 
-#markdowned{
-    
-}
-
 #markdowned img{
     width: 100%;
     height: auto;
 }
 
-#text, {
+#text {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    box-sizing: border-box;
     width: 100%;
 }
