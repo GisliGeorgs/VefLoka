@@ -5,7 +5,7 @@ CREATE TABLE users(
     username varchar( 32 ),
     salt varchar( 256 ),
     hash varchar( 256 ),
-    date timestamp with time zone,
+    date varchar( 16 ),
     CONSTRAINT users_pkey PRIMARY KEY ( id ),
     CONSTRAINT users_user UNIQUE ( username )
 );
