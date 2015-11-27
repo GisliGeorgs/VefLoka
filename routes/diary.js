@@ -17,10 +17,11 @@ function diaryPost( req, res ){
     var userID = req.session.user.id;
     var title = req.body.title;
     var text = req.body.text;
+    var publicEntry = req.body.public;
     var user = req.session.user;
     //var data = [ userID, title, text, user ];
     //console.log( data );
-    diary.addEntry( userID, title, text, function ( err, result ){
+    diary.addEntry( userID, title, text, publicEntry, function ( err, result ){
         if( result ){
             res.redirect( '/diary' );
         }

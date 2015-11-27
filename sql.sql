@@ -16,6 +16,7 @@ CREATE TABLE diary(
     "userID" int,
     id serial NOT NULL,
     title varchar( 50 ),
+    public boolean, 
     text text,
     date timestamp with time zone,
     CONSTRAINT diary_pkey PRIMARY KEY ( id ),
