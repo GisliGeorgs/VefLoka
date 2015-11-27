@@ -34,7 +34,7 @@ function userPost( req, res ){
                      validate.isRequired( nPass2 );
     var isLength = validate.isLength( nPass, 5 );
     results.push( {
-        name: 'nýju lykilorðiðin eru ekki þau sömu',
+        name: 'nýju lykilorðiðin eru ekki þau sömu eða þá að lengd þeirra er ekki næg.',
         result: isRequired && validate.isSame( nPass, nPass2 ) && isLength
     } );
 
