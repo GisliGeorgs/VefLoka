@@ -13,7 +13,7 @@ block content
                     for entry in entries    
                         a.list-group-item( href='/entry?id='+ entry.id )= entry.title
             div.newEntry.col-sm-9.clearfix.form-group
-                form.form-horizontal( method='post', action='diary' )
+                form( method='post', action='diary' )
                     if post                        
                         if error
                             p Villa kom upp við gerð nýrrar færslu
