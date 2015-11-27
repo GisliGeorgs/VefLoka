@@ -22,3 +22,8 @@ a {
     width: 100%;
     height: auto;
 }
+
+hr {
+    border: none;
+	height: 5px;
+}
