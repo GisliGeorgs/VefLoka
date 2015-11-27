@@ -56,7 +56,8 @@ function entryUpdate( req, res ){
             console.log( 'Breyting gagna tókst.' );
             res.redirect( '/diary' );
         }
-        else{            
+        else{       
+            console.log( 'Villa kom upp við breytingu gagnsins.' );     
             var data = { title: 'Færsla', errorUp: true };
             res.redirect( '/entry?id=' + id, data );
         }
