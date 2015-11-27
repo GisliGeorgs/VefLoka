@@ -8,8 +8,8 @@ var diary = require( '../lib/entries' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
-router.get( '/index'/*, ensureLoggedIn*/, index );
-router.get( '/'/*, ensureLoggedIn*/, index );
+router.get( '/index'/*, ensureLoggedIn*/, indexGet );
+router.get( '/'/*, ensureLoggedIn*/, indexGet );
 
 module.exports = router;
 
