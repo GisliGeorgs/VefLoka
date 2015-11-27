@@ -31,7 +31,7 @@ function indexGet( req, res ){
     }    
     diary.getPublicEntries( function ( err, result ){
         if( result ){
-            data.results = result;
+            data.entries = result;
             res.render( 'index', data );
         }
         else{
