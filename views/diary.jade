@@ -5,31 +5,32 @@ block content
     //p Welcome to #{title}
     //p Hér á að koma dagbók með userum og eh svoleiðis
     div.diary.container-fluid
-        div.list-group.entries3.col-sm-2
-            if( !entries || entries.length == 0 )
-                p Engar færslur
-            else
-                for entry in entries    
-                    a.list-group-item( href='/entry?id='+ entry.id )= entry.title
-        div.newEntry.col-sm-8.clearfix
-            form.form-horizontal( method='post', action='diary' )
-                if post                        
-                    if error
-                        p Villa kom upp við gerð nýrrar færslu
-                div.form-group
-                    label.col-sm-2.control-label( for='title' )
-                        | Titill
-                    div.col-sm-8
+        div.row
+            div.list-group.entries3.col-sm-3
+                if( !entries || entries.length == 0 )
+                    p Engar færslur
+                else
+                    for entry in entries    
+                        a.list-group-item( href='/entry?id='+ entry.id )= entry.title
+            div.newEntry.col-sm-9.clearfix.form-group
+                form.form-horizontal( method='post', action='diary' )
+                    if post                        
+                        if error
+                            p Villa kom upp við gerð nýrrar færslu
+                    div.form-group
+                        label.col-sm-12.control-label( for='title' )
+                            | Titill
+                        //div.col-sm-12
                         input.form-control( type='text' id='title' name='title' placeholder='Titill')
-                div.form-group
-                    label.col-sm-2.control-label( for='text' )
-                        | Texti                    
-                    div.col-sm-8
+                    div.form-group
+                        label.col-sm-12.control-label( for='text' )
+                            | Texti                    
+                        //div.col-sm-12
                         textarea.form-control( rows='5' id='text' name='text' placeholder='Skrifaðu texta hér' ) 
-                div.form-group
-                    div.col-sm-offset-2
+                    div.form-group
+                        //div.col-sm-offset-2
                         div.checkbox
                             label( for='public' )
                                 input( type='checkbox' id='public' name='public' )
                                 | Þetta er opinber færsla
-                button.btn.btn-lg.pull-left.btn-primary.glyphicon.glyphicon-ok Skrá færslu
+                    button.btn.btn-lg.pull-left.btn-primary.glyphicon.glyphicon-ok Skrá færslu
