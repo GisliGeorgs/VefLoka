@@ -27,14 +27,14 @@ html
             a.right.carousel-control(href='#carousel' role='button' data-slide='next')
                 span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
                 span.sr-only Next
-    nav#head
+    div#head
         div#headtitle
             h1= title
         div
             nav.navbar.navbar-default
                 div.container-fluid
                     div.navbar-header
-                        button.navbar-toggle.collapsed( data-toggle='collapse' data-target='myNav' )
+                        button.navbar-toggle( type='button' data-toggle='collapse' data-target='#myNav' )
                             span.icon-bar
                             span.icon-bar
                             span.icon-bar
