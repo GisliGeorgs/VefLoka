@@ -9,8 +9,6 @@ var bodyParser = require('body-parser');
 
 var session = require('express-session');
 
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
 var auth = require( './routes/auth' );
 var diary = require( './routes/diary' );
 var entry = require( './routes/entry' );  
@@ -38,8 +36,7 @@ var sessName = process.env.SESSION_NAME;
 var cookie = { domain: '', httpOnly: true, secure: false, expires: false };
 
 app.use( session( {
-  //secret: sessSecret,
-  secret: "123123123",
+  secret: sessSecret,
   resave: false,
   saveUnintialized: true,
   cookie: cookie,
