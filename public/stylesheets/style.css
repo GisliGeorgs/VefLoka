@@ -36,3 +36,7 @@ hr {
     width: 100%;
     height: auto;
 }
+
+textarea{
+    width: 100%;
+}
