@@ -4,8 +4,11 @@ block content
     p Welcome to #{title}
     p Hér á að koma dagbók með userum og eh svoleiðis
     div.publicEntries
-        each entry in result
-            div.entry
-                h3 #{entry.title}
-                h4 #{entry.date}
-                p #{entry.text}    
+        if( !entries || entries.length == 0 )
+            p Engar færslur
+        else        
+            for entry in result
+                div.entry
+                    h3 #{entry.title}
+                    h4 #{entry.date}
+                    p #{entry.text}    
