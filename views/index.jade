@@ -1,8 +1,6 @@
 extends layout
 
 block content
-    p Welcome to #{title}
-    p Hér á að koma dagbók með userum og eh svoleiðis
     div.publicEntries
         if( !entries || entries.length == 0 )
             p Engar færslur
