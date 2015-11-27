@@ -34,7 +34,7 @@ function indexGet( req, res ){
     diary.getPublicEntries( function ( err, result ){
         if( result ){
             //var md = [];
-			result.reverse();
+            result.reverse();
             for( var i = 0; i < result.length; i++ ){
                 var md = marked( result[i].text );
                 result[i].md = md;
