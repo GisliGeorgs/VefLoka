@@ -20,6 +20,6 @@ function index( req, res ){
         res.render( 'index', data );
     }
     else{
-        res.render( '/index', data );
+        res.render( 'index', data );
     }
 }
