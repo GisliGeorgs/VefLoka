@@ -8,10 +8,10 @@
 
 ###Vantar
 * Henda út kommentuðum ónotuðum kóða.
-* Verjast gegn XSS í markdown-vistun
+* Verjast gegn XSS í markdown-vistun - Komið?
   * [Sjá hér ](https://github.com/leizongmin/js-xss)
 * 99% Villumeðhöndlun
-* Form validation - Komið held ég
+* Form validation - Komið?
   * Register  
   * Login
   * Change Password/User
