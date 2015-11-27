@@ -35,7 +35,7 @@ function indexGet( req, res ){
         if( result ){
             //var md = [];
             for( var i = 0; i < result.length; i++ ){
-                result.md = ( marked( result[i].text ) );
+                result[i].md = ( marked( result[i].text ) );
                 console.log( result[i] );
             }
             data.entries = result;

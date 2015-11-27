@@ -48,7 +48,8 @@ function entryUpdate( req, res ){
     var id = req.query.id;
     var title = req.body.title;
     var text = req.body.text;
-    diary.updateEntry( user.id, id, title, text, function ( err, result ){
+    var publicEntry = req.body.public
+    diary.updateEntry( user.id, id, title, text, publicEntry, function ( err, result ){
         if( result ){
             console.log( 'Breyting gagna tókst.' );
             res.redirect( '/diary' );
