@@ -6,10 +6,11 @@ block content
     div.publicEntries
         if( !entries || entries.length == 0 )
             p Engar færslur
-        else        
+        else
+		    entries.reverse()
             for entry in entries
                 div.entry
                     h1 #{entry.title}
                     h3 #{entry.date}
                     div!= entry.md
-                hr(noshade='', size='4', width='50%')
+                hr(noshade='', size='40', width='50%')
