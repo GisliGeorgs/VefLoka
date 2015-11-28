@@ -19,9 +19,14 @@ module.exports = router;
 function entry( req, res ){
     var user = req.session.user;
     var id = req.query.id;
+    var data = { title: id, user: user, id: id };
+    if( res.query.uperror ){
+           data.errorUp = true;
+    }
     diary.getEntry( user.id, id, function ( err, result ){
         if( result ){
-            var data = { title: id, user: user, id: id, entry: result[0] };
+            data.entry = result[0]
+            //var data = { title: id, user: user, id: id, entry: result[0] };
             res.render( 'entry', data );
         }
         else{
@@ -50,7 +55,7 @@ function entryUpdate( req, res ){
     var id = req.query.id;
     var title = req.body.title;
     var text = xss(req.body.text);
-    var publicEntry = req.body.public
+    var publicEntry = req.body.publicC
     diary.updateEntry( user.id, id, title, text, publicEntry, function ( err, result ){
         if( result ){
             console.log( 'Breyting gagna tókst.' );
@@ -58,8 +63,8 @@ function entryUpdate( req, res ){
         }
         else{       
             console.log( 'Villa kom upp við breytingu gagnsins.' );     
-            var data = { title: 'Færsla', errorUp: true };
-            res.redirect( '/entry?id=' + id, data );
+            //var data = { title: 'Færsla', errorUp: true };
+            res.redirect( '/entry?id=' + id + '&uperror=true' );
         }
     } );
 }
