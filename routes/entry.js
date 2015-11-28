@@ -55,7 +55,8 @@ function entryUpdate( req, res ){
     var id = req.query.id;
     var title = req.body.title;
     var text = xss(req.body.text);
-    var publicEntry = req.body.publicC
+    var publicEntry = req.body.publicC;
+    console.log( publicEntry );
     diary.updateEntry( user.id, id, title, text, publicEntry, function ( err, result ){
         if( result ){
             console.log( 'Breyting gagna tókst.' );
