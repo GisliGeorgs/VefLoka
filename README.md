@@ -36,4 +36,6 @@ Síðan var farið í flóknari hlutina. Þá var endað á að fá flott, gott 
 
 Hugsunarferli
 
-Það sem mætti fara betur
+Það helsta sem fór úrskeiðis og lengdi þróunartíma töluvert er það sem var nefnt
+hér að ofan, það að ekki tókst að tengjast eða búa til Postgre gagnagrunna í
+okkar eigin tölvum.
