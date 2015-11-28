@@ -10,8 +10,8 @@ var diary = require( '../lib/entries' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
-router.get( '/index'/*, ensureLoggedIn*/, indexGet );
-router.get( '/'/*, ensureLoggedIn*/, indexGet );
+router.get( '/index', indexGet );
+router.get( '/', indexGet );
 
 module.exports = router;
 
@@ -33,7 +33,6 @@ function indexGet( req, res ){
     }    
     diary.getPublicEntries( function ( err, result ){
         if( result ){
-            //var md = [];
             result.reverse();
             for( var i = 0; i < result.length; i++ ){
                 var md = marked( result[i].text );
@@ -41,7 +40,6 @@ function indexGet( req, res ){
             }
             data.entries = result;
             data.marked = marked;
-            //data.md = md;
             res.render( 'index', data );
         }
         else{

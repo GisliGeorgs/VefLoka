@@ -11,7 +11,10 @@ block content
                     p Engar færslur
                 else
                     for entry in entries    
-                        a.list-group-item( href='/entry?id='+ entry.id )= entry.title
+                        //a.list-group-item( href='/entry?id='+ entry.id )= entry.title
+                        a.list-group-item( href='/entry?id='+ entry.id )
+                            h4= entry.title
+                            p= entry.date
             div.newEntry.col-sm-9.clearfix.form-group
                 form( method='post', action='diary' )
                     if post                        

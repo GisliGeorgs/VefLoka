@@ -21,8 +21,6 @@ function diaryPost( req, res ){
     var text = xss(req.body.text);
     var publicEntry = req.body.public;
     var user = req.session.user;
-    //var data = [ userID, title, text, user ];
-    //console.log( data );
     diary.addEntry( userID, title, text, publicEntry, function ( err, result ){
         if( result ){
             res.redirect( '/diary' );
@@ -37,6 +35,7 @@ function diaryPost( req, res ){
 function diaryGet( req, res ){
     var user = req.session.user;
     diary.getEntries( 10, user.id, function ( err, result ){
+        result.reverse();
         var data = { title: 'Dagbók', user: user, entries: result };
         res.render( 'diary', data );
     } );
