@@ -21,11 +21,12 @@ function userGet( req, res ){
 }
 
 function userPost( req, res ){    
+    var user = req.session.user;
     var username = req.session.user.username;
     var oPass = req.body.oPass;
     var nPass = req.body.pass;
     var nPass2 = req.body.pass2;
-    var data = { title: 'Notandi', user: req.session.user };
+    var data = { title: 'Notandi', user: user };
 
     var results = [];
     var errors = [];
@@ -33,9 +34,10 @@ function userPost( req, res ){
                      validate.isRequired( nPass ) &&
                      validate.isRequired( nPass2 );
     var isLength = validate.isLength( nPass, 5 );
+    
     results.push( {
         name: 'nýju lykilorðiðin eru ekki þau sömu eða ' + 
-              'þá að lengd þeirra er ekki næg.',
+              'þá að lengd þeirra er ekki næg( a.m.k. 5 stafir).',
         result: isRequired && validate.isSame( nPass, nPass2 ) && isLength
     } );
 
@@ -43,8 +45,7 @@ function userPost( req, res ){
         if( !results[ i ].result ){
             errors.push( results[ i ] );
         } 
-    }                
-    
+    }
     
     if( !errors.length ){
         users.auth( username, oPass, function ( err, user ){
@@ -65,7 +66,8 @@ function userPost( req, res ){
                 });
             }
             else{
-                data.error = false;
+                data.error = true;
+                data.errorWrongPass
                 res.render( 'user', data );
             }
         } );            
