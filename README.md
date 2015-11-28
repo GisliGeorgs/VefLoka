@@ -10,6 +10,7 @@
 Hægt er að skoða og nota vefsíðuna á [vefloka.herokuapp.com](https://vefloka.herokuapp.com/)
 
 En ef þú vilt setja upp verkefnið heima hjá þér. Er það gert svona.
+
 1. Setja upp gagnagrunn með hjálp `sql.sql`
 1. Setja inn hlekk á gagnagrunninn í `.env`
 1. `> npm install`
