@@ -1,3 +1,7 @@
+
+/*
+    users taflan
+*/
 DROP TABLE users;
 
 CREATE TABLE users(
@@ -10,12 +14,16 @@ CREATE TABLE users(
     CONSTRAINT users_user UNIQUE ( username )
 );
 
+/* 
+    diary TAFLAN
+*/
 DROP TABLE diary;
 
-CREATE TABLE diary("userID" integer,
+CREATE TABLE diary(
+    "userID" integer,
     id serial NOT NULL,
-    text text,
     title character varying(50),
+    text text,
     public boolean,
     date character varying(16),
     "dateSQL" timestamp with time zone,
