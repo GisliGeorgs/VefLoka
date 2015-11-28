@@ -17,7 +17,7 @@ module.exports = router;
 
 function diaryPost( req, res ){
     var userID = req.session.user.id;
-    var title = req.body.title;
+    var title = xss(req.body.title);
     var text = xss(req.body.text);
     var publicEntry = req.body.public;
     var user = req.session.user;

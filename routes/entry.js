@@ -52,7 +52,7 @@ function entryDelete( req, res ){
 function entryUpdate( req, res ){
     var user = req.session.user;
     var id = req.query.id;
-    var title = req.body.title;
+    var title = xss(req.body.title);
     var text = xss(req.body.text);
     var publicEntry = req.body.publicC;
     console.log( publicEntry );
