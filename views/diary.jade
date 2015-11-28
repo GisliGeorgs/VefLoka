@@ -1,9 +1,6 @@
 extends layout
 
 block content
-    //h1= title
-    //p Welcome to #{title}
-    //p Hér á að koma dagbók með userum og eh svoleiðis
     div.diary.container-fluid
         div.row
             div.list-group.entries3.col-sm-3
@@ -11,7 +8,6 @@ block content
                     p Engar færslur
                 else
                     for entry in entries    
-                        //a.list-group-item( href='/entry?id='+ entry.id )= entry.title
                         a.list-group-item( href='/entry?id='+ entry.id )
                             h4= entry.title
                             p= entry.date

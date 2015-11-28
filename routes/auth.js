@@ -49,7 +49,6 @@ function createHandler( req, res, next ){
     var data = { title: 'Nýskráning' };
     
     if( !errors.length ){        
-        // hér vantar villumeðhöndlun
         users.createUser( user, pass, function( err, status ){
             if( err ){
                 console.error( err );
