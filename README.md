@@ -38,4 +38,5 @@ Hugsunarferli
 
 Það helsta sem fór úrskeiðis og lengdi þróunartíma töluvert er það sem var nefnt
 hér að ofan, það að ekki tókst að tengjast eða búa til Postgre gagnagrunna í
-okkar eigin tölvum.
+okkar eigin tölvum. Það var því ekki hægt að prófa síðuna án þess að 'deploya'
+á Heroku
