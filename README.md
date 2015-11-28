@@ -7,16 +7,12 @@
 ###gus97@hi.is
 
 ###Vantar
-* Verjast gegn XSS í markdown-vistun - Komið?
-  * [Sjá hér ](https://github.com/leizongmin/js-xss)
 * 99% Villumeðhöndlun
 * Form validation - Komið?
   * Register  
   * Login
   * Change Password/User
 * Exporta færslur í pdf?
-
-
 
 ###Lists
 1. Fyrsta ætem
@@ -31,17 +27,15 @@
     function loginHandler( req, res, next ){
       var username = req.body.user;
       var password = req.body.pass;
-      console.log('Userinn er ', username);
     }
 ```
 ###Hérna er líka kóði
 Fjögur leading spaces
 
     function loginHandler( req, res, next ){
-    var username = req.body.user;
-    var password = req.body.pass;
-    console.log('Userinn er ', username);
-
+        var username = req.body.user;
+        var password = req.body.pass;
+    }
 ###Hlekkir
 
 [I'm an inline-style link](https://www.google.com)
