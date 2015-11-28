@@ -30,6 +30,7 @@ hr {
 }
 #markdowned{
     padding-top: 2em;
+    border-left: solid #b5b5b5
 }
 #markdowned img{
     width: 100%;
