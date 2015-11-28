@@ -16,7 +16,7 @@ module.exports = router;
 
 function userGet( req, res ){
     var user = req.session.user;
-    var data = { title: 'User', user: user };
+    var data = { title: 'Notandi', user: user };
     res.render( 'user', data );
 }
 
