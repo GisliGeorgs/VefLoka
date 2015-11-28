@@ -28,11 +28,14 @@ hr {
     border: none;
 	height: 12px;
 }
-
+#markdowned{
+    padding-top: 2em;
+}
 #markdowned img{
     width: 100%;
     height: auto;
 }
+
 
 textarea {
 	-webkit-box-sizing: border-box;
