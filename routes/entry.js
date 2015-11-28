@@ -5,7 +5,7 @@ var router = express.Router();
 
 var xss = require( 'xss' ); 
 
-var users = require( '../lib/users' );
+//var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
@@ -25,8 +25,7 @@ function entry( req, res ){
     }
     diary.getEntry( user.id, id, function ( err, result ){
         if( result ){
-            data.entry = result[0]
-            //var data = { title: id, user: user, id: id, entry: result[0] };
+            data.entry = result[0];
             res.render( 'entry', data );
         }
         else{
@@ -57,14 +56,15 @@ function entryUpdate( req, res ){
     var text = xss(req.body.text);
     var publicEntry = req.body.publicC;
     console.log( publicEntry );
-    diary.updateEntry( user.id, id, title, text, publicEntry, function ( err, result ){
+    diary.updateEntry( user.id, id, title, 
+                       text, publicEntry, 
+                       function ( err, result ){
         if( result ){
             console.log( 'Breyting gagna tókst.' );
             res.redirect( '/diary' );
         }
         else{       
-            console.log( 'Villa kom upp við breytingu gagnsins.' );     
-            //var data = { title: 'Færsla', errorUp: true };
+            console.log( 'Villa kom upp við breytingu gagnsins.' );
             res.redirect( '/entry?id=' + id + '&uperror=true' );
         }
     } );

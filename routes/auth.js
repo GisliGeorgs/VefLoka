@@ -4,31 +4,16 @@ var express = require('express');
 var router = express.Router();
 
 var users = require( '../lib/users' );
-var diary = require( '../lib/entries' );
+//var diary = require( '../lib/entries' );
 var validate = require( '../lib/validate' );
 
-var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
+//var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
 router.get( '/login', redirectIfLoggedIn, login );
 router.post( '/login', loginHandler );
 router.get( '/logout', logout );
 router.get( '/register', createForm );
 router.post( '/register', createHandler );
-/*
-router.get( '/index', ensureLoggedIn, index );
-router.get( '/', ensureLoggedIn, index );
-*/
-/*
-router.get( '/diary', ensureLoggedIn, diaryGet );
-router.post( '/diary', ensureLoggedIn, diaryPost );*/
-/*
-router.get( '/entry', ensureLoggedIn, entry );
-router.post( '/delete', ensureLoggedIn, entryDelete );
-router.post( '/update', ensureLoggedIn, entryUpdate );*/
-/*
-router.get( '/user', ensureLoggedIn, userGet );
-router.post( '/user', ensureLoggedIn, userPost );
-*/
 
 module.exports = router;
 

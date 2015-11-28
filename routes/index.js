@@ -5,26 +5,15 @@ var router = express.Router();
 
 var marked = require( 'marked' );
 
-var users = require( '../lib/users' );
+//var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
-var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
+//var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
 
 router.get( '/index', indexGet );
 router.get( '/', indexGet );
 
 module.exports = router;
-
-function index( req, res ){
-    var data = { title: 'Forsíða' };    
-    if( req.session.user ){
-        data.user = req.session.user;
-        res.render( 'index', data );
-    }
-    else{
-        res.render( 'index', data );
-    }
-}
 
 function indexGet( req, res ){
     var data = { title: 'Forsíða' };

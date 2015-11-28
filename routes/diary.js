@@ -5,7 +5,7 @@ var router = express.Router();
 
 var xss = require( 'xss' );
 
-var users = require( '../lib/users' );
+//var users = require( '../lib/users' );
 var diary = require( '../lib/entries' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );

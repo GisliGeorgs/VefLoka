@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 
 var users = require( '../lib/users' );
-var diary = require( '../lib/entries' );
+//var diary = require( '../lib/entries' );
 var validate = require( '../lib/validate' );
 
 var ensureLoggedIn = require( '../middleware/ensureLoggedIn' );
@@ -34,7 +34,8 @@ function userPost( req, res ){
                      validate.isRequired( nPass2 );
     var isLength = validate.isLength( nPass, 5 );
     results.push( {
-        name: 'nýju lykilorðiðin eru ekki þau sömu eða þá að lengd þeirra er ekki næg.',
+        name: 'nýju lykilorðiðin eru ekki þau sömu eða ' + 
+              'þá að lengd þeirra er ekki næg.',
         result: isRequired && validate.isSame( nPass, nPass2 ) && isLength
     } );
 
@@ -56,7 +57,7 @@ function userPost( req, res ){
                     if (err || !success) {
                         success = false;
                     }
-                    data.error = success
+                    data.error = success;
                     if( success ){
                         data.changed = true;
                     }
