@@ -20,7 +20,7 @@ function entry( req, res ){
     var user = req.session.user;
     var id = req.query.id;
     var data = { title: id, user: user, id: id };
-    if( res.query.uperror ){
+    if( Object.keys(req.query).length === 2 ){
            data.errorUp = true;
     }
     diary.getEntry( user.id, id, function ( err, result ){
