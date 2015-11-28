@@ -6,14 +6,6 @@
 ##Guðmundur Sigurðsson, 
 ###gus97@hi.is
 
-###Vantar
-* 99% Villumeðhöndlun
-* Form validation - Komið?
-  * Register  
-  * Login
-  * Change Password/User
-* Exporta færslur í pdf?
-
 ###Lists
 1. Fyrsta ætem
 2. Annað
