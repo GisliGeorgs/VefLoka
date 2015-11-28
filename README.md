@@ -28,3 +28,12 @@ Verkefnið var leyst með svita og tárum. Ekki náðist að tengjast gagnagrunn
 gera smá breytingar og svo þurfa að hlaða þeim upp á Heroku var ekki 
 skemmtilegt ferli. Það batnaði hins vegar til munar þegar ákveðið var að
 færa verkefnið yfir á Github.
+
+Byrjað var á því að ákveða sirka hvaða virkni átti að vera. Svo var farið í það
+að útfæra þá virkni, aðallega byrjað á að gera bakendan og fá grunnvirkni upp.
+Síðan var farið í flóknari hlutina. Þá var endað á að fá flott, gott og rétt
+útlit á síðuna.
+
+Hugsunarferli
+
+Það sem mætti fara betur
