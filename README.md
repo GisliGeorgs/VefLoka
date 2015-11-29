@@ -34,13 +34,11 @@ Verkefnið var leyst með erfiðleikum í byrjun. Ekkert gekk og ekki náðist a
 Það var leiðinlegt og gekk ekkert sérlega vel þangað til ákveðið var að færa verkefnið
 af Dropbox yfir á github.
 
-Verkefnið var leyst með Express aðallega. Til að auðvelda nokkra hluti eins og notenda
+Notast var við Express. Til að auðvelda nokkra hluti eins og notenda
 umsjón, innskráningu og svoleiðis ásamt grunni fyrir notkun SQL með Express í gegnum Postgre 
 og Heroku fengum við mikla hjálp frá dæmi sem tekið var í fyrirlestri 22. 
 Við notuðum við nokkra hluti úr lausnum okkar á verkefni 3, dagbókinni með færslum
 geymdar í localStorage.
-
-Hugsunarferli
 
 Það helsta sem fór úrskeiðis og lengdi þróunartíma töluvert er það sem var nefnt
 hér að ofan, það að ekki tókst að tengjast eða búa til Postgre gagnagrunna í
