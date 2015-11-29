@@ -38,11 +38,9 @@ function entryDelete( req, res ){
     var id = req.query.id;
     diary.deleteEntry( user.id, id, function ( err, result ){
         if( result ){
-            console.log( 'Eyðing gagna tókst.' );
             res.redirect( '/diary' );
         }
         else{
-            console.log( 'Villa kom upp við eyðingu gagnsins.' );
             var data = { title: 'Færsla', errorDel: true };
             res.redirect( '/entry?id=' + id, data );
         }
@@ -55,16 +53,13 @@ function entryUpdate( req, res ){
     var title = xss(req.body.title);
     var text = xss(req.body.text);
     var publicEntry = req.body.publicC;
-    console.log( publicEntry );
     diary.updateEntry( user.id, id, title, 
                        text, publicEntry, 
                        function ( err, result ){
         if( result ){
-            console.log( 'Breyting gagna tókst.' );
             res.redirect( '/diary' );
         }
         else{       
-            console.log( 'Villa kom upp við breytingu gagnsins.' );
             res.redirect( '/entry?id=' + id + '&uperror=true' );
         }
     } );
