@@ -8,6 +8,7 @@ block content
             for entry in entries
                 div.entry
                     h1 #{entry.title}
+                    h2 Skrifað af #{entry.username}
                     h3 #{entry.date}
                     div!= entry.md
                 img(src='/img/separator2.png')
