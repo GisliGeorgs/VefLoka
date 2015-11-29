@@ -23,20 +23,27 @@ Hægt er að nota JSHint með því fylgja eftirfarandi leiðbeiningum
 
 ## Annað
 
-Verkefnið var leyst með svita og tárum. Ekki náðist að tengjast gagnagrunni
-í tölvum okkar þannig að það þurfti að prófa og þróa með Heroku beint. Að 
-gera smá breytingar og svo þurfa að hlaða þeim upp á Heroku var ekki 
-skemmtilegt ferli. Það batnaði hins vegar til munar þegar ákveðið var að
-færa verkefnið yfir á Github.
+Hugmyndin að síðunni var sú að bjóða notendum upp á sína eigin persónulegu dagbók á netinu.
+Til þess þarf að vera hægt að búa til notendanafn og læsa því með lykilorði. Lykilorðið má einnig
+ekki vera auðvelt að ná í gegnum árásir á vefsíðuna. Auk þeirrar virkni að geta haldið sína eigin
+dagbók þá fannst okkur góð hugmynd að búa til þann möguleika að láta dagbókarfærslu koma upp á forsíðunni.
+Þetta lætur forsíðuna vera nokkurs konar opið blogg og hver sem er getur sett sína grein þar.
 
-Byrjað var á því að ákveða sirka hvaða virkni átti að vera. Svo var farið í það
-að útfæra þá virkni, aðallega byrjað á að gera bakendan og fá grunnvirkni upp.
-Síðan var farið í flóknari hlutina. Þá var endað á að fá flott, gott og rétt
-útlit á síðuna.
+Verkefnið var leyst með erfiðleikum í byrjun. Ekkert gekk og ekki náðist að tengjast gagnagrunni
+í PGAdmin. Eina lausnin á því sem við fundum var að prófa beint á Heroku.
+Það var leiðinlegt og gekk ekkert sérlega vel þangað til ákveðið var að færa verkefnið
+af Dropbox yfir á github.
+
+Verkefnið var leyst með Express aðallega. Til að auðvelda nokkra hluti eins og notenda
+umsjón, innskráningu og svoleiðis ásamt grunni fyrir notkun SQL með Express í gegnum Postgre 
+og Heroku fengum við mikla hjálp frá dæmi sem tekið var í fyrirlestri 22. 
+Við notuðum við nokkra hluti úr lausnum okkar á verkefni 3, dagbókinni með færslum
+geymdar í localStorage.
 
 Hugsunarferli
 
 Það helsta sem fór úrskeiðis og lengdi þróunartíma töluvert er það sem var nefnt
 hér að ofan, það að ekki tókst að tengjast eða búa til Postgre gagnagrunna í
 okkar eigin tölvum. Það var því ekki hægt að prófa síðuna án þess að 'deploya'
-á Heroku
+á Heroku. Einnig lentum við stundum í vandræðum eftir að skipt var yfir á Github.
+Það var aðallega vegna þess að enginn okkar er sérstaklega góður í að nota Github.
