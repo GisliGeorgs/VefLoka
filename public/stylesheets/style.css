@@ -37,6 +37,10 @@ hr {
     height: auto;
 }
 
+.author{
+    font-style: italic;
+    text-align: right;
+}
 
 textarea {
 	-webkit-box-sizing: border-box;
