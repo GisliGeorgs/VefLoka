@@ -67,7 +67,6 @@ function userPost( req, res ){
             }
             else{
                 data.error = true;
-                data.errorWrongPass
                 res.render( 'user', data );
             }
         } );            
